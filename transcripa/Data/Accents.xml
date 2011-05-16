@@ -13,6 +13,7 @@
   </Letter>
   <Letter Name="c">
     <Accent Old="c,," New="ç" />
+    <Accent Old="c^" New="ĉ" />
     <Accent Old="c''" New="ć" />
   </Letter>
   <Letter Name="d">
@@ -54,6 +55,7 @@
   <Letter Name="s">
     <Accent Old="s&amp;" New="ß" />
     <Accent Old="s,," New="ş" />
+    <Accent Old="s^" New="ŝ" />
     <Accent Old="s''" New="ś" />
   </Letter>
   <Letter Name="t">
@@ -72,6 +74,7 @@
     <Accent Old="y:" New="ÿ" />
   </Letter>
   <Letter Name="z">
+    <Accent Old="z^" New="ẑ" />
     <Accent Old="z''" New="ź" />
     <Accent Old="z.." New="ż" />
   </Letter>
