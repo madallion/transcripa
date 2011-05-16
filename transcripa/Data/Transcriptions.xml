@@ -57,6 +57,11 @@
     <Transcription Original="of" Replacement="ʌv" Prefix="\s" Suffix="\B" />
     <Transcription Original="one" Replacement="wʌn" Prefix="\s(?:any|every|no|some)?" Suffix="\B" />
     <Transcription Original="on't" Replacement="oʊnt" Suffix="\B" />
+    <Transcription Original="[ao]ugh" Replacement="ɒ" Suffix="t" />
+    <Transcription Original="ough" Replacement="oʊ" Prefix="d|th" />
+    <Transcription Original="ough" Replacement="aʊ" Prefix="b" />
+    <Transcription Original="ough" Replacement="ɒf" Prefix="c|tr" />
+    <Transcription Original="ough" Replacement="ʌf" />
     <Transcription Original="ouldn't" Replacement="ʊdənt" Suffix="\B" />
     <Transcription Original="ould" Replacement="ʊd" Suffix="\B" />
     <Transcription Original="sn't" Replacement="zənt" Suffix="\B" />
@@ -91,7 +96,6 @@
     <Transcription Original="i" Replacement="ɪ" Prefix="\s[bcdfghjklmnpqrstvwxyz]*" Suffix="[bcdfghjklmnpqrstvwxz]+\b" />
     <Transcription Original="i" Replacement="ɪ" Suffix="(?:ck|ll|sh)" />
     <Transcription Original="i" Replacement="i" />
-    <Transcription Original="ough" Replacement="ʌf" />
     <Transcription Original="o[iy]" Replacement="ɔɪ" />
     <Transcription Original="o[uw]" Replacement="aʊ" />
     <Transcription Original="o" Replacement="oʊ" Suffix="[bcdfghjklmnpqrstvwxz]e" />

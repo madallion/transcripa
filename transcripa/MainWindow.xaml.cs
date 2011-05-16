@@ -85,15 +85,24 @@ namespace transcripa
             {
                 Close();       
             }
-            else if ((e.Key < Key.A || e.Key > Key.Z) && text.Length >= 2 && start >= 2)
+            else if ((e.Key < Key.A || e.Key > Key.Z))
             {
-                string unparsed = text.Substring(start - 2, 2);
-                string parsed = accents.Apply(unparsed);
-                if (parsed != unparsed)
+                int textLength = text.Length;
+
+                for (int i = accents.MaxLength; i > 1; i--)
                 {
-                    text = text.Remove(start - 2, 2).Insert(start - 2, parsed);
-                    textBoxInput.Text = text;
-                    textBoxInput.SelectionStart = start - 1;
+                    if (textLength >= i && start >= i)
+                    {
+                        string unparsed = text.Substring(start - i, i);
+                        string parsed = accents.Apply(unparsed);
+                        if (parsed != unparsed)
+                        {
+                            text = text.Remove(start - i, i).Insert(start - i, parsed);
+                            textBoxInput.Text = text;
+                            textBoxInput.SelectionStart = start - 1;
+                            break;
+                        }
+                    }
                 }
             }
 

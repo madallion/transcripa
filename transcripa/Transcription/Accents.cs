@@ -23,6 +23,7 @@ namespace transcripa
         private const string xpath = "/Letters/Letter/Accent";
         private XmlDocument xml = new XmlDocument();
         private Dictionary<string, string> accents = new Dictionary<string, string>();
+        private int maxLength;
 
         /// <summary>
         /// A list of accent marks to replace when typing another language.
@@ -39,6 +40,10 @@ namespace transcripa
                 string oldValue = match.GetAttribute("Old");
                 string newValue = match.GetAttribute("New");
                 accents.Add(oldValue, newValue);
+                if (oldValue.Length > maxLength)
+                {
+                    maxLength = oldValue.Length;
+                }
             }
         }
 
@@ -54,6 +59,14 @@ namespace transcripa
         }
 
         #region Properties
+        /// <summary>
+        /// The length of the longest old value string.
+        /// </summary>
+        public int MaxLength
+        {
+            get { return maxLength; }
+        }
+
         /// <summary>
         /// The path to the accents XML file.
         /// </summary>
