@@ -1,0 +1,16 @@
+﻿<Window x:Class="transcripa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ipa" Height="316" Width="525" Icon="/transcripa;component/Images/schwa.ico"
+        FocusManager.FocusedElement="{Binding ElementName=textBoxInput}" Closing="Window_Closing" KeyDown="Window_KeyDown">
+    <Grid Height="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ComboBox Grid.Row="0" Name="comboBoxLanguage" Height="24" TabIndex="0" SelectionChanged="comboBoxLanguage_SelectionChanged" Margin="12,12,0,0" HorizontalAlignment="Left" Width="120" VerticalAlignment="Top" />
+        <TextBox Grid.Row="1" Name="textBoxInput" KeyUp="textBoxInput_KeyUp" TabIndex="1" TextWrapping="Wrap" Margin="12,6,12,6" />
+        <TextBox Grid.Row="2" Name="textBoxOutput" IsEnabled="True" IsReadOnly="True" TabIndex="2" TextWrapping="Wrap" Margin="12,6,12,6" />
+    </Grid>
+</Window>
