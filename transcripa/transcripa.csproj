@@ -80,7 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Accents.cs" />
+    <Compile Include="Transcription\Accents.cs" />
     <Compile Include="Transcription\Transcription.cs" />
     <Compile Include="Transcription\Transcriber.cs" />
     <Compile Include="Extensions\XmlExtension.cs" />
