@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Languages>
-  <Language Name="English" ISO="en">
+  <Language Name="English" ISO="en" Native="English">
     <!-- Special cases -->
     <Transcription Original="any" Replacement="ɛniː" Prefix="\s" />
     <Transcription Original="as" Replacement="æz" Prefix="\s" Suffix="\B" />
@@ -106,7 +106,7 @@
     <Transcription Original="y" Replacement="j" />
     <Transcription Original="zz?" Replacement="z" />
   </Language>
-  <Language Name="French" ISO="fr">
+  <Language Name="French" ISO="fr" Native="Français">
     <!-- Liaison -->
     <Transcription Original="[ae]n" Replacement="ɑn‿ " Prefix="[^i]" Suffix="[\s\-]h?(?:[aàâæéèêëiîïôœuùûüyÿ]|e(?!t\s)|o(?!u\s))" />
     <Transcription Original="(?:ai|ei|i|ie)n" Replacement="ɛn‿ " Suffix="[\s\-]h?(?:[aàâæéèêëiîïôœuùûüyÿ]|e(?!t\s)|o(?!u\s))" />
@@ -201,7 +201,7 @@
     <Transcription Original="\-" Replacement=" " />
     <Transcription Original="'" Replacement="" />
   </Language>
-  <Language Name="Japanese" ISO="ja">
+  <Language Name="Japanese" ISO="ja" Native="日本語">
     <!-- Exceptions -->
     <Transcription Original="iu" Replacement="jɯː" Prefix="\b(?:au|k(?:ō|oo|ou)|s(?:ō|oo|ou))" Suffix="\s" />
     <!-- Vowels -->
@@ -255,7 +255,65 @@
     <Transcription Original="z" Replacement="z" />
     <Transcription Original="['\-]" Replacement="" />
   </Language>
-  <Language Name="Latin" ISO="la">
+  <Language Name="Korean" ISO="kr" Native="한국어">
+    <!-- Short vowels -->
+    <Transcription Original="ae" Replacement="ɛ" />
+    <Transcription Original="a" Replacement="a" />
+    <Transcription Original="eo" Replacement="ʌ" />
+    <Transcription Original="eu" Replacement="ɯ" />
+    <Transcription Original="oe" Replacement="ø" />
+    <Transcription Original="e" Replacement="e" />
+    <Transcription Original="i" Replacement="i" />
+    <Transcription Original="o" Replacement="o" />
+    <Transcription Original="u" Replacement="u" />
+    <Transcription Original="ui" Replacement="ɰi" Prefix="\s" />
+    <!-- Long vowels -->
+    <Transcription Original="ae" Replacement="ɛː" />
+    <Transcription Original="a" Replacement="ɑː" />
+    <Transcription Original="eo" Replacement="ɘː" />
+    <Transcription Original="eu" Replacement="ɯː" />
+    <Transcription Original="oe" Replacement="øː" />
+    <Transcription Original="e" Replacement="eː" />
+    <Transcription Original="i" Replacement="iː" />
+    <Transcription Original="o" Replacement="oː" />
+    <Transcription Original="u" Replacement="uː" />
+    <!-- Consonants -->
+    <Transcription Original="b" Replacement="b" Prefix="[aeilnou]" Suffix="[aeiou]" />
+    <Transcription Original="b" Replacement="p" />
+    <Transcription Original="ch" Replacement="tɕʰ" />
+    <Transcription Original="d" Replacement="d" Prefix="[aeilnou]" Suffix="[aeiou]" />
+    <Transcription Original="d" Replacement="t" />
+    <Transcription Original="g" Replacement="g" Prefix="[aeilnou]" Suffix="[aeiou]" />
+    <Transcription Original="g" Replacement="k" />
+    <Transcription Original="h" Replacement="ɦ" Prefix="[aeilnou]" Suffix="[aeiou]" />
+    <Transcription Original="h" Replacement="x" Suffix="eu" />
+    <Transcription Original="h" Replacement="ç" Suffix="[iy]" />
+    <Transcription Original="h" Replacement="ɸ" Suffix="[ouw]" />
+    <Transcription Original="h" Replacement="h" />
+    <Transcription Original="jj" Replacement="tɕ͈" />
+    <Transcription Original="j" Replacement="dʑ" Prefix="[aeilnou]" Suffix="[aeiou]" />
+    <Transcription Original="j" Replacement="tɕ" />
+    <Transcription Original="kk" Replacement="k͈" />
+    <Transcription Original="k" Replacement="kx" Suffix="eu" />
+    <Transcription Original="k" Replacement="kç" Suffix="[iy]" />
+    <Transcription Original="k" Replacement="kʰ" />
+    <Transcription Original="l" Replacement="l" />
+    <Transcription Original="m" Replacement="m" />
+    <Transcription Original="ng" Replacement="ŋ" Suffix="[^aeiou]" />
+    <Transcription Original="n" Replacement="n" />
+    <Transcription Original="pp" Replacement="p͈" />
+    <Transcription Original="p" Replacement="pʰ" />
+    <Transcription Original="r" Replacement="ɾ" />
+    <Transcription Original="ss" Replacement="ɕ͈" Suffix="[iy]" />
+    <Transcription Original="ss" Replacement="s͈" />
+    <Transcription Original="s" Replacement="ɕ" Suffix="[iy]" />
+    <Transcription Original="s" Replacement="s" />
+    <Transcription Original="tt" Replacement="t͈" />
+    <Transcription Original="t" Replacement="tʰ" />
+    <Transcription Original="y" Replacement="j" />
+    <Transcription Original="w" Replacement="w" />
+  </Language>
+  <Language Name="Latin" ISO="la" Native="Latina">
     <!-- Diphthongs -->
     <Transcription Original="ae|æ" Replacement="aj" />
     <Transcription Original="a[uv]" Replacement="aw" />
@@ -307,7 +365,7 @@
     <Transcription Original="x" Replacement="ks" />
     <Transcription Original="z" Replacement="z" />
   </Language>
-  <Language Name="Mandarin" ISO="zh">
+  <Language Name="Mandarin" ISO="zh" Native="中文">
     <!-- Finals -->
     <Transcription Original="ai" Replacement="aɪ̯" />
     <Transcription Original="a(?:ng|ŋ)" Replacement="ɑŋ" />
