@@ -136,8 +136,8 @@
     <Transcription Original="eau|ô" Replacement="o" />
     <Transcription Original="eu|œu" Replacement="œ" />
     <Transcription Original="eû" Replacement="ø" />
-    <Transcription Original="e" Replacement="ə" Prefix="\s(?:[cdjlmnt]|qu)" Suffix="\B" />
-    <Transcription Original="e" Replacement="" Prefix="(?:[gq]u|[^aàâæeéèêëiîïoôœuùûüyÿ])" Suffix="\B" />
+    <Transcription Original="e" Replacement="ə" Prefix="\s(?:[cdjlmnt]|qu)" Suffix="[\s\-]" />
+    <Transcription Original="e" Replacement="" Prefix="(?:[gq]u|[^aàâæeéèêëiîïoôœuùûüyÿ])" Suffix="[\s\-]" />
     <Transcription Original="ée?|e" Replacement="e" />
     <Transcription Original="i" Replacement="j" Suffix="[eéèêë]" />
     <Transcription Original="i" Replacement="j" Prefix="[st]" Suffix="o" />
@@ -172,7 +172,7 @@
     <Transcription Original="ng" Replacement="n" Suffix="ŋ" />
     <Transcription Original="nn?" Replacement="n" />
     <Transcription Original="pp?" Replacement="p" />
-    <Transcription Original="rh?" Replacement="ʁ" />
+    <Transcription Original="r[rh]?" Replacement="ʁ" />
     <Transcription Original="s" Replacement="s" Prefix="[\s\-]" />
     <Transcription Original="s" Replacement="s" Suffix="[bdfghjklmnpqrtvwxz]" />
     <Transcription Original="s" Replacement="z" />

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="transcripa.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ipa" Height="316" Width="525" Icon="/transcripa;component/Images/schwa.ico"
+        Title="transcripa" Height="316" Width="525" Icon="/transcripa;component/Images/schwa.ico"
         FocusManager.FocusedElement="{Binding ElementName=textBoxInput}" Closing="Window_Closing" KeyDown="Window_KeyDown">
     <Grid Height="Auto">
         <Grid.RowDefinitions>
