@@ -46,5 +46,17 @@ namespace transcripa.Properties {
                 this["CurrentInput"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int CurrentRomanizationIndex {
+            get {
+                return ((int)(this["CurrentRomanizationIndex"]));
+            }
+            set {
+                this["CurrentRomanizationIndex"] = value;
+            }
+        }
     }
 }

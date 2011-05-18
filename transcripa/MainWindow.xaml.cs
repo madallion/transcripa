@@ -24,7 +24,7 @@ namespace transcripa
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Transcriber transcriber;
+        public LanguageManager languageManager;
         public Accents accents;
         private const string windowTitle = "ipa";
 
@@ -34,16 +34,17 @@ namespace transcripa
             int counter = 0;
             string currentLanguage = Properties.Settings.Default.CurrentLanguage;
             string currentInput = Properties.Settings.Default.CurrentInput;
+            int currentRomanizationIndex = Properties.Settings.Default.CurrentRomanizationIndex;
 
             InitializeComponent();
             textBoxInput.Text = currentInput;
             textBoxInput.SelectionStart = currentInput.Length;
 
-            transcriber = new Transcriber();
+            languageManager = new LanguageManager();
             accents = new Accents();
 
             // Write available languages to the combo box
-            foreach (string language in transcriber.Languages)
+            foreach (string language in languageManager.Languages)
             {
                 comboBoxLanguage.Items.Add(language);
                 if (language == currentLanguage)
@@ -54,9 +55,16 @@ namespace transcripa
             }
 
             // Select the first item if it exists
-            if (transcriber.Length != 0)
+            if (languageManager.Length != 0)
             {
                 comboBoxLanguage.SelectedIndex = comboBoxIndex;
+            }
+
+            comboBoxRomanization.ItemsSource = languageManager.CurrentLanguage.RomanizationNames;
+
+            if (currentRomanizationIndex != -1 && currentRomanizationIndex < comboBoxRomanization.Items.Count)
+            {
+                comboBoxRomanization.SelectedIndex = currentRomanizationIndex;
             }
 
             Transcribe();
@@ -111,16 +119,49 @@ namespace transcripa
 
         private void Transcribe()
         {
-            textBoxOutput.Text = transcriber.Transcribe(textBoxInput.Text);
+            string romanization = languageManager.CurrentLanguage.Romanize(textBoxInput.Text, false);
+            textBoxRomanized.Text = romanization;
+            textBoxOutput.Text = languageManager.CurrentLanguage.Transcribe(romanization, true, true);
         }
 
         private void comboBoxLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string currentLanguage = comboBoxLanguage.SelectedValue.ToString();
-            transcriber.Load(currentLanguage);
+            int romanizationIndex;
+            int itemCount;
+
+            languageManager.Load(currentLanguage);
+
             Title = string.Format("{0} - {1}", windowTitle, currentLanguage);
             Properties.Settings.Default.CurrentLanguage = currentLanguage;
+
+            // Set romanization index
+            romanizationIndex = languageManager.CurrentLanguage.RomanizationIndex;
+            Properties.Settings.Default.CurrentRomanizationIndex = romanizationIndex;
+            comboBoxRomanization.ItemsSource = languageManager.CurrentLanguage.RomanizationNames;
+            itemCount = comboBoxRomanization.Items.Count;
+            if (romanizationIndex != -1 && romanizationIndex < itemCount)
+            {
+                comboBoxRomanization.SelectedIndex = romanizationIndex;
+            }
+            else if (itemCount != 0)
+            {
+                comboBoxRomanization.SelectedIndex = 0;
+            }
+            else
+            {
+                // Make sure we run the transcription process
+                Transcribe();
+            }
             textBoxInput.Focus();
+        }
+
+        private void comboBoxRomanization_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int romanizationIndex = comboBoxRomanization.SelectedIndex;
+            languageManager.CurrentLanguage.RomanizationIndex = romanizationIndex;
+            Properties.Settings.Default.CurrentRomanizationIndex = romanizationIndex;
+            Transcribe();
         }
     }
 }

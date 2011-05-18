@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Languages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Language" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Decomposition" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Constituent" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="PrevFactor" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="Index" type="xs:integer" use="required" />
+                              <xs:attribute name="MultiplyBy" type="xs:integer" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Offset" type="xs:int" use="required" />
+                        <xs:attribute name="Modulus" type="xs:int" use="required" />
+                        <xs:attribute name="Divisor" type="xs:int" use="required" />
+                        <xs:attribute name="Intercept" type="xs:int" use="required" />
+                        <xs:attribute name="Order" type="xs:int" use="required" />
+                        <xs:attribute name="RangeMin" type="xs:int" use="required" />
+                        <xs:attribute name="RangeMax" type="xs:int" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Romanization" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Transliteration" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Original" type="xs:string" use="required" />
+                        <xs:attribute name="Replacement" type="xs:string" use="required" />
+                        <xs:attribute name="Prefix" type="xs:string" use="optional" />
+                        <xs:attribute name="Suffix" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="IPA" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Transcription" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Original" type="xs:string" use="required" />
+                        <xs:attribute name="Replacement" type="xs:string" use="required" />
+                        <xs:attribute name="Prefix" type="xs:string" use="optional" />
+                        <xs:attribute name="Suffix" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required" />
+            <xs:attribute name="ISO" type="xs:string" use="required" />
+            <xs:attribute name="Native" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

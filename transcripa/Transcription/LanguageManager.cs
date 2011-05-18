@@ -19,25 +19,25 @@ namespace transcripa
     /// <summary>
     /// A class containing information on each language and the available transliterations.
     /// </summary>
-    public partial class Transcriber
+    public partial class LanguageManager
     {
-        private const string xmlPath = "Data/Transcriptions.xml";
+        private const string xmlPath = "Data/Languages.xml";
         private XmlDocument xml = new XmlDocument();
         private Dictionary<string, Language> languages = new Dictionary<string, Language>();
-        private string currentLanguage = "";
+        private string name = "";
 
         /// <summary>
         /// A class containing information on each language and the available transliterations.
         /// </summary>
-        public Transcriber()
+        public LanguageManager()
         {
             XmlNodeList matches;
             xml.Load(xmlPath);
             matches = xml.SelectNodes("/Languages/Language");
             foreach (XmlNode match in matches)
             {
-                string iso = match.Attributes["ISO"].Value;
-                string name = match.Attributes["Name"].Value;
+                string iso = match.GetAttribute("ISO");
+                string name = match.GetAttribute("Name");
 
                 languages.Add(name, new Language(iso, name));
             }
@@ -50,27 +50,8 @@ namespace transcripa
         /// <returns>The current object.</returns>
         public void Load(string name)
         {
-            currentLanguage = name;
-            Current().Load(ref xml);
-        }
-
-        /// <summary>
-        /// The language in current use for transliteration.
-        /// </summary>
-        /// <returns></returns>
-        private Language Current()
-        {
-            return languages[currentLanguage];
-        }
-
-        /// <summary>
-        /// Transcribes the provided input string.
-        /// </summary>
-        /// <param name="input">The string to transcribe.</param>
-        /// <returns>The IPA transcription.</returns>
-        public string Transcribe(string input)
-        {
-            return Current().Transcribe(input);
+            this.name = name;
+            this.CurrentLanguage.Load(ref xml);
         }
 
         #region Properties
@@ -103,12 +84,20 @@ namespace transcripa
         }
 
         /// <summary>
+        /// An accessor for the current language.
+        /// </summary>
+        public Language CurrentLanguage
+        {
+            get { return languages[name]; }
+        }
+
+        /// <summary>
         /// The name of the current language being transliterated.
         /// </summary>
-        public string CurrentLanguage
+        public string Name
         {
-            get { return currentLanguage; }
-            set { currentLanguage = value; }
+            get { return name; }
+            set { name = value; }
         }
         #endregion
     }

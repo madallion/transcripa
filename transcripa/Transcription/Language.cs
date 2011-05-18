@@ -10,20 +10,32 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Xml;
 
 namespace transcripa
 {
-    public partial class Transcriber
+    public partial class LanguageManager
     {
         public partial class Language
         {
             private string iso;
             private string name;
             private List<Transcription> transcriptions = new List<Transcription>();
+            private List<Romanization> romanizations = new List<Romanization>();
+            private List<Decomposition> decompositions = new List<Decomposition>();
+            private int romanizationIndex = -1;
             private bool loaded = false;
-            private const string xpath = "/Languages/Language[@Name=\"{0}\"]/Transcription";
+
+            #region XML parsing XPaths
+            private const string languageXPath = "/Languages/Language[@Name=\"{0}\"]";
+            private const string ipaXPath = "IPA/Transcription";
+            private const string romanizationXPath = "Romanization";
+            private const string transliterationXPath = "Transliteration";
+            private const string decompositionXPath = "Decomposition/Constituent";
+            private const string prevFactorsXPath = "PrevFactor";
+            #endregion
 
             /// <summary>
             /// Constructs a language of the specified ISO code and full name.
@@ -44,19 +56,123 @@ namespace transcripa
             {
                 if (!loaded)
                 {
-                    XmlNodeList matches = xml.SelectNodes(string.Format(xpath, name));
+                    XmlNode languageNode=xml.SelectSingleNode(string.Format(languageXPath,name));
+                    XmlNodeList ipaMatches = languageNode.SelectNodes(ipaXPath);
+                    XmlNodeList romanizationMatches = languageNode.SelectNodes(romanizationXPath);
+                    XmlNodeList decompositionMatches = languageNode.SelectNodes(decompositionXPath);
 
-                    foreach (XmlNode match in matches)
+                    foreach (XmlNode m in ipaMatches)
                     {
                         // A little lenient, in that it allows for all or none of these attributes to exist
-                        string original = match.GetAttribute("Original");
-                        string replacement = match.GetAttribute("Replacement");
-                        string prefix = match.GetAttribute("Prefix");
-                        string suffix = match.GetAttribute("Suffix");
+                        string original = m.GetAttribute("Original");
+                        string replacement = m.GetAttribute("Replacement");
+                        string prefix = m.GetAttribute("Prefix");
+                        string suffix = m.GetAttribute("Suffix");
 
                         transcriptions.Add(new Transcription(original, replacement, prefix, suffix));
                     }
+
+                    foreach (XmlNode m in romanizationMatches)
+                    {
+                        XmlNodeList transliterationMatches = m.SelectNodes(transliterationXPath);
+
+                        string romanizationName = m.GetAttribute("Name");
+
+                        Romanization r = new Romanization(romanizationName);
+
+                        foreach (XmlNode n in transliterationMatches)
+                        {
+                            string original = n.GetAttribute("Original");
+                            string replacement = n.GetAttribute("Replacement");
+                            string prefix = n.GetAttribute("Prefix");
+                            string suffix = n.GetAttribute("Suffix");
+
+                            r.Transliterations.Add(new Transcription(original, replacement, prefix, suffix));
+                        }
+
+                        romanizations.Add(r);
+                    }
+
+                    foreach (XmlNode m in decompositionMatches)
+                    {
+                        XmlNodeList prevFactorsMatches = m.SelectNodes(prevFactorsXPath);
+
+                        int offset = int.Parse(m.GetAttribute("Offset"));
+                        int modulus = int.Parse(m.GetAttribute("Modulus"));
+                        int divisor = int.Parse(m.GetAttribute("Divisor"));
+                        int intercept = int.Parse(m.GetAttribute("Intercept"));
+                        int order = int.Parse(m.GetAttribute("Order"));
+                        int rangeMin = int.Parse(m.GetAttribute("RangeMin"));
+                        int rangeMax = int.Parse(m.GetAttribute("RangeMax"));
+
+                        Decomposition d = new Decomposition(offset, modulus, divisor, intercept, order, rangeMin, rangeMax);
+
+                        foreach (XmlNode n in prevFactorsMatches)
+                        {
+                            int index = int.Parse(n.GetAttribute("Index"));
+                            int multiplyBy = int.Parse(n.GetAttribute("MultiplyBy"));
+
+                            d.PrevFactors.Add(index, multiplyBy);
+                        }
+
+                        decompositions.Add(d);
+                    }
                 }
+            }
+
+            /// <summary>
+            /// Decomposes a string according to the decomposition rules for the language.
+            /// </summary>
+            /// <param name="input">The string to decompose.</param>
+            /// <returns>The string decomposed into its constituent characters.</returns>
+            public string Decompose(string input)
+            {
+                if (decompositions.Count == 0)
+                {
+                    return input;
+                }
+                else
+                {
+                    StringBuilder builder = new StringBuilder();
+
+                    foreach (char letter in input)
+                    {
+                        List<int> results = new List<int>();
+                        int codepoint = (int)letter;
+
+                        foreach (Decomposition decomposition in decompositions)
+                        {
+                            if (codepoint >= decomposition.RangeMin && codepoint <= decomposition.RangeMax)
+                            {
+                                results.Add(decomposition.Decompose(letter, results));
+                            }
+                        }
+                        if (results.Count == 0)
+                        {
+                            builder.Append(letter);
+                        }
+                        else
+                        {
+                            results.Sort();
+                            foreach (int result in results)
+                            {
+                                builder.Append(char.ConvertFromUtf32(result));
+                            }
+                        }
+                    }
+                    return builder.ToString();
+                }
+            }
+
+            #region Overrides
+            /// <summary>
+            /// Romanizes a string according to the decomposition rules for the language.
+            /// </summary>
+            /// <param name="input">The string to romanize.</param>
+            /// <returns>The romanized string.</returns>
+            public string Romanize(string input)
+            {
+                return Romanize(input, true);
             }
 
             /// <summary>
@@ -66,6 +182,62 @@ namespace transcripa
             /// <returns>The IPA transcription.</returns>
             public string Transcribe(string input)
             {
+                return Transcribe(input, true, true);
+            }
+
+            /// <summary>
+            /// Transcribes a string according to the rules for the language.
+            /// </summary>
+            /// <param name="input">The string to transcribe.</param>
+            /// <param name="isDecomposed">Whether the string has already been decomposed. Defaults to true.</param>
+            /// <returns>The IPA transcription.</returns>
+            public string Transcribe(string input, bool isDecomposed)
+            {
+                return Transcribe(input, isDecomposed, true);
+            }
+            #endregion
+
+            /// <summary>
+            /// Romanizes a string according to the decomposition rules for the language.
+            /// </summary>
+            /// <param name="input">The string to romanize.</param>
+            /// <param name="isDecomposed">Whether the string has already been decomposed. Defaults to true.</param>
+            /// <returns>The romanized string.</returns>
+            public string Romanize(string input, bool isDecomposed)
+            {
+                if (romanizations.Count == 0 || romanizationIndex == -1)
+                {
+                    return input;
+                }
+                else
+                {
+                    if (!isDecomposed)
+                    {
+                        input = Decompose(input);
+                    }
+
+                    return Romanization.Romanize(input);
+                }
+            }
+
+            /// <summary>
+            /// Transcribes a string according to the rules for the language.
+            /// </summary>
+            /// <param name="input">The string to transcribe.</param>
+            /// <param name="isDecomposed">Whether the string has already been decomposed. Defaults to true.</param>
+            /// <param name="isRomanized">Whether the string has already been romanized. Defaults to true.</param>
+            /// <returns>The IPA transcription.</returns>
+            public string Transcribe(string input, bool isDecomposed, bool isRomanized)
+            {
+                if (!isDecomposed)
+                {
+                    input = Decompose(input);
+                }
+                if (!isRomanized)
+                {
+                    input = Romanize(input);
+                }
+
                 StringBuilder builder = new StringBuilder();
                 input = " " + input + " ";
                 int inputLength = input.Length;
@@ -119,11 +291,60 @@ namespace transcripa
             }
 
             /// <summary>
-            /// The XPath used to query for matching segments.
+            /// The current romanization system.
             /// </summary>
-            public string XPath
+            public Romanization Romanization
             {
-                get { return string.Format(xpath, name); }
+                get { return romanizations[romanizationIndex]; }
+            }
+
+            /// <summary>
+            /// The index of the current romanization system.
+            /// </summary>
+            public int RomanizationIndex
+            {
+                get { return romanizationIndex; }
+                set { romanizationIndex = value; }
+            }
+
+            /// <summary>
+            /// The name of the current romanization system.
+            /// </summary>
+            public string RomanizationName
+            {
+                get
+                {
+                    return Romanization.Name;
+                }
+                set
+                {
+                    int romanizationLength = romanizations.Count;
+
+                    for (int i = 0; i < romanizationLength; i++)
+                    {
+                        if (value == romanizations[i].Name)
+                        {
+                            romanizationIndex = i;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            /// <summary>
+            /// A list of the romanization systems available for this language.
+            /// </summary>
+            public List<string> RomanizationNames
+            {
+                get
+                {
+                    List<string> rs = new List<string>();
+                    foreach (Romanization r in romanizations)
+                    {
+                        rs.Add(r.Name);
+                    }
+                    return rs;
+                }
             }
             #endregion
         }

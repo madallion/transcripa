@@ -81,8 +81,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Transcription\Accents.cs" />
+    <Compile Include="Transcription\Decomposition.cs" />
+    <Compile Include="Transcription\Romanization.cs" />
     <Compile Include="Transcription\Transcription.cs" />
-    <Compile Include="Transcription\Transcriber.cs" />
+    <Compile Include="Transcription\LanguageManager.cs" />
     <Compile Include="Extensions\XmlExtension.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -126,7 +128,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Data\Transcriptions.xsd">
+    <None Include="Data\Languages.xsd">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -172,7 +174,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data\Transcriptions.xml">
+    <None Include="Data\Languages.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
