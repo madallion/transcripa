@@ -26,7 +26,7 @@ namespace transcripa
     {
         public LanguageManager languageManager;
         public Accents accents;
-        private const string windowTitle = "ipa";
+        private const string windowTitle = "transcripa";
 
         public MainWindow()
         {
@@ -62,6 +62,9 @@ namespace transcripa
             }
 
             comboBoxRomanization.ItemsSource = languageManager.CurrentLanguage.RomanizationNames;
+            Visibility visibility = (comboBoxRomanization.Items.Count == 0 ? Visibility.Hidden : Visibility.Visible);
+            labelRomanization.Visibility = visibility;
+            comboBoxRomanization.Visibility = visibility;
 
             if (currentRomanizationIndex != -1 && currentRomanizationIndex < comboBoxRomanization.Items.Count)
             {
@@ -140,6 +143,9 @@ namespace transcripa
             romanizationIndex = languageManager.CurrentLanguage.RomanizationIndex;
             Properties.Settings.Default.CurrentRomanizationIndex = romanizationIndex;
             comboBoxRomanization.ItemsSource = languageManager.CurrentLanguage.RomanizationNames;
+            Visibility visibility = (comboBoxRomanization.Items.Count == 0 ? Visibility.Hidden : Visibility.Visible);
+            labelRomanization.Visibility = visibility;
+            comboBoxRomanization.Visibility = visibility;
             itemCount = comboBoxRomanization.Items.Count;
             if (romanizationIndex != -1 && romanizationIndex < itemCount)
             {

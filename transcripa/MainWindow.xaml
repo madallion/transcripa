@@ -31,7 +31,7 @@
         <DockPanel Grid.Row="0" VerticalAlignment="Center">
             <Label Name="labelLanguage" Content="Language:" />
             <ComboBox Name="comboBoxLanguage" SelectionChanged="comboBoxLanguage_SelectionChanged" />
-            <Label Content="Romanization:" />
+            <Label Name="labelRomanization" Content="Romanization:" />
             <ComboBox Name="comboBoxRomanization" SelectionChanged="comboBoxRomanization_SelectionChanged" />
             <CheckBox Name="hideErrorsCheckBox" Checked="hideErrorsCheckBox_Checked"  Content="Hide validation errors" VerticalAlignment="Center" />
         </DockPanel>
