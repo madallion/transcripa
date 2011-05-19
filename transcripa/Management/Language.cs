@@ -78,10 +78,11 @@ namespace transcripa
 
                         foreach (XmlNode n in transcriptionExMatches)
                         {
+                            string exOriginal = n.GetAttribute("Original");
                             string exReplacement = n.GetAttribute("Replacement");
                             string exPrefix = n.GetAttribute("Prefix");
                             string exSuffix = n.GetAttribute("Suffix");
-                            t.AddException(exReplacement, exPrefix, exSuffix);
+                            t.AddException(exOriginal, exReplacement, exPrefix, exSuffix);
                         }
 
                         transcriptions.Add(t);
@@ -104,10 +105,11 @@ namespace transcripa
 
                             foreach (XmlNode o in transliterationExMatches)
                             {
+                                string exOriginal = o.GetAttribute("Original");
                                 string exReplacement = o.GetAttribute("Replacement");
                                 string exPrefix = o.GetAttribute("Prefix");
                                 string exSuffix = o.GetAttribute("Suffix");
-                                t.AddException(exReplacement, exPrefix, exSuffix);
+                                t.AddException(exOriginal, exReplacement, exPrefix, exSuffix);
                             }
                             r.Transliterations.Add(t);
                         }

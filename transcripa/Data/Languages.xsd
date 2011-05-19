@@ -52,7 +52,15 @@
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="LanguageUnitType" />
+      <xs:extension base="LanguageUnitType">
+        <xs:attribute name="Original" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+              The original pattern to search for in regular expression form.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
@@ -63,7 +71,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="ExceptionType">
+      <xs:extension base="LanguageUnitType">
         <xs:sequence>
           <xs:element ref="Exception" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>

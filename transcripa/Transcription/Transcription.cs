@@ -63,9 +63,9 @@ namespace transcripa
             }
         }
 
-        public void AddException(string replacement, string prefix, string suffix)
+        public void AddException(string original, string replacement, string prefix, string suffix)
         {
-            exceptions.Add(new TranscriptionException(replacement, prefix, suffix));
+            exceptions.Add(new TranscriptionException(original, replacement, prefix, suffix));
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace transcripa
         /// <returns></returns>
         public TranscriptionMatch IsMatch(string raw, int startIndex)
         {
-            Match match = originalRegex.Match(raw.Substring(startIndex));
-            // Get entire match to make calculating start index of suffix regex evaluation a bit easier
+            string original = raw.Substring(startIndex);
+            Match match = originalRegex.Match(original);
             int matchLength = match.Length;
             if (matchLength != 0)
             {
@@ -89,7 +89,7 @@ namespace transcripa
                     {
                         foreach (TranscriptionException exception in exceptions)
                         {
-                            if (exception.IsMatch(prefix, suffix))
+                            if (exception.IsMatch(original, prefix, suffix))
                             {
                                 return new TranscriptionMatch(exception.Replacement, match.Length);
                             }
