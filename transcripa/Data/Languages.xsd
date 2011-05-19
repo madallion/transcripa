@@ -36,6 +36,15 @@
                   <xs:sequence>
                     <xs:element name="Transliteration" maxOccurs="unbounded">
                       <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Exception" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="Replacement" type="xs:string" use="required" />
+                              <xs:attribute name="Prefix" type="xs:string" use="optional" />
+                              <xs:attribute name="Suffix" type="xs:string" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
                         <xs:attribute name="Original" type="xs:string" use="required" />
                         <xs:attribute name="Replacement" type="xs:string" use="required" />
                         <xs:attribute name="Prefix" type="xs:string" use="optional" />

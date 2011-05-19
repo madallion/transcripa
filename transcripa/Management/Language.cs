@@ -30,9 +30,14 @@ namespace transcripa
 
             #region XML parsing XPaths
             private const string languageXPath = "/Languages/Language[@Name=\"{0}\"]";
-            private const string ipaXPath = "IPA/Transcription";
+
+            private const string transcriptionXPath = "IPA/Transcription";
+            private const string transcriptionExXPath = "Exception";
+
             private const string romanizationXPath = "Romanization";
             private const string transliterationXPath = "Transliteration";
+            private const string transliterationExXPath = "Exception";
+
             private const string decompositionXPath = "Decomposition/Constituent";
             private const string prevFactorsXPath = "PrevFactor";
             #endregion
@@ -57,37 +62,54 @@ namespace transcripa
                 if (!loaded)
                 {
                     XmlNode languageNode=xml.SelectSingleNode(string.Format(languageXPath,name));
-                    XmlNodeList ipaMatches = languageNode.SelectNodes(ipaXPath);
+                    XmlNodeList ipaMatches = languageNode.SelectNodes(transcriptionXPath);
                     XmlNodeList romanizationMatches = languageNode.SelectNodes(romanizationXPath);
                     XmlNodeList decompositionMatches = languageNode.SelectNodes(decompositionXPath);
 
                     foreach (XmlNode m in ipaMatches)
                     {
                         // A little lenient, in that it allows for all or none of these attributes to exist
+                        XmlNodeList transcriptionExMatches = m.SelectNodes(transcriptionExXPath);
                         string original = m.GetAttribute("Original");
                         string replacement = m.GetAttribute("Replacement");
                         string prefix = m.GetAttribute("Prefix");
                         string suffix = m.GetAttribute("Suffix");
+                        Transcription t = new Transcription(original, replacement, prefix, suffix);
 
-                        transcriptions.Add(new Transcription(original, replacement, prefix, suffix));
+                        foreach (XmlNode n in transcriptionExMatches)
+                        {
+                            string exReplacement = n.GetAttribute("Replacement");
+                            string exPrefix = n.GetAttribute("Prefix");
+                            string exSuffix = n.GetAttribute("Suffix");
+                            t.AddException(exReplacement, exPrefix, exSuffix);
+                        }
+
+                        transcriptions.Add(t);
                     }
 
                     foreach (XmlNode m in romanizationMatches)
                     {
                         XmlNodeList transliterationMatches = m.SelectNodes(transliterationXPath);
-
                         string romanizationName = m.GetAttribute("Name");
-
                         Romanization r = new Romanization(romanizationName);
 
                         foreach (XmlNode n in transliterationMatches)
                         {
+                            XmlNodeList transliterationExMatches = n.SelectNodes(transliterationExXPath);
                             string original = n.GetAttribute("Original");
                             string replacement = n.GetAttribute("Replacement");
                             string prefix = n.GetAttribute("Prefix");
                             string suffix = n.GetAttribute("Suffix");
+                            Transcription t= new Transcription(original, replacement,prefix,suffix);
 
-                            r.Transliterations.Add(new Transcription(original, replacement, prefix, suffix));
+                            foreach (XmlNode o in transliterationExMatches)
+                            {
+                                string exReplacement = o.GetAttribute("Replacement");
+                                string exPrefix = o.GetAttribute("Prefix");
+                                string exSuffix = o.GetAttribute("Suffix");
+                                t.AddException(exReplacement, exPrefix, exSuffix);
+                            }
+                            r.Transliterations.Add(t);
                         }
 
                         romanizations.Add(r);
@@ -247,12 +269,12 @@ namespace transcripa
                     bool hasMatch = false;
                     foreach (Transcription transcription in transcriptions)
                     {
-                        int matchLength = transcription.IsMatch(input, i);
-                        if (matchLength != 0)
+                        Transcription.TranscriptionMatch match = transcription.IsMatch(input, i);
+                        if (match != null)
                         {
                             hasMatch = true;
-                            builder.Append(transcription.Replacement);
-                            i += matchLength - 1;
+                            builder.Append(match.Replacement);
+                            i += match.Length - 1;
                             break;
                         }
                     }

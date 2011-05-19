@@ -271,55 +271,66 @@
     </Decomposition>
     <Romanization Name="McCune-Reischauer">
       <!-- Initial -->
-      <Transliteration Original="ᄀ" Replacement="g" Prefix="[ᆼᆫᆯᆷᆧ]" />
-      <Transliteration Original="ᄀ" Replacement="k'" Prefix="[ᆭᆶᇂ]" />
-      <Transliteration Original="ᄀ" Replacement="k" />
-      <Transliteration Original="ᄁ" Replacement="k" Prefix="ᆨ" />
-      <Transliteration Original="ᄁ" Replacement="kk" />
-      <Transliteration Original="ᄂ" Replacement="" Prefix="\s" Suffix="[ᅣᅤᅧᅨᅭᅲᅵ]" />
-      <Transliteration Original="ᄂ" Replacement="l" Prefix="[ᆯᆶ]" />
-      <Transliteration Original="ᄂ" Replacement="n" />
-      <Transliteration Original="ᄃ" Replacement="d" Prefix="[ᆼᆫᆯᆷᆧ]" /> <!-- not sure about R -->
-      <Transliteration Original="ᄃ" Replacement="t'" Prefix="[ᆭᆶᇂ]" />
-      <Transliteration Original="ᄃ" Replacement="t" />
+      <Transliteration Original="ᄀ" Replacement="k">
+        <Exception Replacement="g" Prefix="[ᆼᆫᆯᆷᆧ]" />
+        <Exception Replacement="k'" Prefix="[ᆭᆶᇂ]" />
+      </Transliteration>
+      <Transliteration Original="ᄁ" Replacement="kk">
+        <Exception Replacement="k" Prefix="ᆨ" />
+      </Transliteration>
+      <Transliteration Original="ᄂ" Replacement="n">
+        <Exception Replacement="" Prefix="\s" Suffix="[ᅣᅤᅧᅨᅭᅲᅵ]" />
+        <Exception Replacement="l" Prefix="[ᆯᆶ]" />
+      </Transliteration>
+      <Transliteration Original="ᄃ" Replacement="t">
+        <!-- not sure about R -->
+        <Exception Replacement="d" Prefix="[ᆼᆫᆯᆷᆧ]" />
+        <Exception Replacement="t'" Prefix="[ᆭᆶᇂ]" />
+      </Transliteration>
       <Transliteration Original="ᄄ" Replacement="tt" />
-      <Transliteration Original="ᄅ" Replacement="" Prefix="\s" Suffix="[ᅣᅤᅧᅨᅭᅲᅵ]" />
-      <Transliteration Original="ᄅ" Replacement="r" Prefix="ᆧ" />
-      <Transliteration Original="ᄅ" Replacement="l" Prefix="[ᆫᆯ]" />
-      <Transliteration Original="ᄅ" Replacement="n" />
+      <Transliteration Original="ᄅ" Replacement="n">
+        <Exception Replacement="" Prefix="\s" Suffix="[ᅣᅤᅧᅨᅭᅲᅵ]" />
+        <Exception Replacement="r" Prefix="ᆧ" />
+        <Exception Replacement="l" Prefix="[ᆫᆯ]" />
+      </Transliteration>
       <Transliteration Original="ᄆ" Replacement="m" />
-      <Transliteration Original="ᄇ" Replacement="b" Prefix="[ᆼᆫᆯᆷᆧ]" />
-      <Transliteration Original="ᄇ" Replacement="p" />
+      <Transliteration Original="ᄇ" Replacement="p">
+        <Exception Replacement="b" Prefix="[ᆼᆫᆯᆷᆧ]" />
+      </Transliteration>
       <Transliteration Original="ᄈ" Replacement="pp" />
-      <Transliteration Original="ᄉ" Replacement="sh" Prefix="ᅱ" />
-      <Transliteration Original="ᄉ" Replacement="s" />
+      <Transliteration Original="ᄉ" Replacement="s">
+        <Exception Replacement="sh" Prefix="ᅱ" />
+      </Transliteration>
       <Transliteration Original="ᄊ" Replacement="ss" />
       <Transliteration Original="ᄋ" Replacement="" />
-      <Transliteration Original="ᄌ" Replacement="j" Prefix="[ᆼᆫᆷᆧ]" />
-      <Transliteration Original="ᄌ" Replacement="ch'" Prefix="[ᆭᆶᇂ]" />
-      <Transliteration Original="ᄌ" Replacement="ch" />
+      <Transliteration Original="ᄌ" Replacement="ch">
+        <Exception Replacement="j" Prefix="[ᆼᆫᆷᆧ]" />
+        <Exception Replacement="ch'" Prefix="[ᆭᆶᇂ]" />
+      </Transliteration>
       <Transliteration Original="ᄍ" Replacement="tch" />
       <Transliteration Original="ᄎ" Replacement="ch'" />
       <Transliteration Original="ᄏ" Replacement="k'" />
       <Transliteration Original="ᄐ" Replacement="t'" />
       <Transliteration Original="ᄑ" Replacement="p'" />
-      <Transliteration Original="ᄒ" Replacement="" Prefix="[ᆮᆽᆬᆰ]" />
-      <Transliteration Original="ᄒ" Replacement="h" />
+      <Transliteration Original="ᄒ" Replacement="h">
+        <Exception Replacement="" Prefix="[ᆮᆽᆬᆰ]" />
+      </Transliteration>
       <!-- Vowel -->
       <Transliteration Original="ᅡ" Replacement="a" />
       <Transliteration Original="ᅢ" Replacement="ae" />
       <Transliteration Original="ᅣ" Replacement="ya" />
       <Transliteration Original="ᅤ" Replacement="yae" />
       <Transliteration Original="ᅥ" Replacement="ŏ" />
-      <Transliteration Original="ᅦ" Replacement="ë" Prefix="[ㅏㅗ]" />
-      <Transliteration Original="ᅦ" Replacement="e" />
+      <Transliteration Original="ᅦ" Replacement="e">
+        <Exception Replacement="ë" Prefix="[ㅏㅗ]" />
+      </Transliteration>
       <Transliteration Original="ᅧ" Replacement="yŏ" />
       <Transliteration Original="ᅨ" Replacement="ye" />
       <Transliteration Original="ᅩ" Replacement="o" />
       <Transliteration Original="ᅪ" Replacement="wa" />
       <Transliteration Original="ᅫ" Replacement="wae" />
       <Transliteration Original="ᅬ" Replacement="oe" />
-      <Transliteration Original="ᅭ" Replacement="yo" /> <!-- ᅣᅤᅧᅨᅭᅲᅵ -->
+      <Transliteration Original="ᅭ" Replacement="yo" />
       <Transliteration Original="ᅮ" Replacement="u" />
       <Transliteration Original="ᅯ" Replacement="wŏ" />
       <Transliteration Original="ᅰ" Replacement="we" />
@@ -329,73 +340,95 @@
       <Transliteration Original="ᅴ" Replacement="ŭi" />
       <Transliteration Original="ᅵ" Replacement="i" />
       <!-- Final -->
-      <Transliteration Original="ᆨ" Replacement="g" Suffix="ᄋ" />
-      <Transliteration Original="ᆨ" Replacement="ng" Suffix="[ᄂᄅᄆ]" />
-      <Transliteration Original="ᆨ" Replacement="k" />
-      <Transliteration Original="ᆩ" Replacement="kk" Suffix="ᄋ" />
-      <Transliteration Original="ᆩ" Replacement="k" />
+      <Transliteration Original="ᆨ" Replacement="k">
+        <Exception Replacement="g" Suffix="ᄋ" />
+        <Exception Replacement="ng" Suffix="[ᄂᄅᄆ]" />
+      </Transliteration>
+      <Transliteration Original="ᆩ" Replacement="k">
+        <Exception Replacement="kk" Suffix="ᄋ" />
+      </Transliteration>
       <Transliteration Original="ᆪ" Replacement="k" />
-      <Transliteration Original="ᆫ" Replacement="l" Suffix="ᄅ" />
-      <Transliteration Original="ᆫ" Replacement="n'" Suffix="ᄀ" />
-      <Transliteration Original="ᆫ" Replacement="n" />
-      <Transliteration Original="ᆬ" Replacement="nj" Suffix="ᄋ" />
-      <Transliteration Original="ᆬ" Replacement="nch'" Suffix="ᄒ" />
-      <Transliteration Original="ᆬ" Replacement="n" />
+      <Transliteration Original="ᆫ" Replacement="n">
+        <Exception Replacement="l" Suffix="ᄅ" />
+        <Exception Replacement="n'" Suffix="ᄀ" />
+      </Transliteration>
+      <Transliteration Original="ᆬ" Replacement="n">
+        <Exception Replacement="nj" Suffix="ᄋ" />
+        <Exception Replacement="nch'" Suffix="ᄒ" />
+      </Transliteration>
       <Transliteration Original="ᆭ" Replacement="n" />
-      <Transliteration Original="ᆮ" Replacement="d" Suffix="ᄋ" />
-      <Transliteration Original="ᆮ" Replacement="n" Suffix="ᄂ" />
-      <Transliteration Original="ᆮ" Replacement="ch'" Suffix="ᄒ" />
-      <Transliteration Original="ᆮ" Replacement="t" />
-      <Transliteration Original="ᆯ" Replacement="r" Suffix="[ᄋᄒ]" />
-      <Transliteration Original="ᆯ" Replacement="l" />
-      <Transliteration Original="ᆰ" Replacement="lg" Suffix="ᄋ" />
-      <Transliteration Original="ᆰ" Replacement="l" Suffix="ᄀ" />
-      <Transliteration Original="ᆰ" Replacement="ng" Suffix="ᄂ" />
-      <Transliteration Original="ᆰ" Replacement="lk'" Suffix="ᄒ" />
-      <Transliteration Original="ᆰ" Replacement="k" Suffix="[ᄁᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒ]" />
-      <Transliteration Original="ᆰ" Replacement="l" />
-      <Transliteration Original="ᆱ" Replacement="lm" Suffix="ᄋ" />
-      <Transliteration Original="ᆱ" Replacement="m" />
-      <Transliteration Original="ᆲ" Replacement="lb" Suffix="ᄋ" />
-      <Transliteration Original="ᆲ" Replacement="lp'" Suffix="ᄒ" />
-      <Transliteration Original="ᆲ" Replacement="l" Prefix="바" Suffix="ᄂ" />
-      <Transliteration Original="ᆲ" Replacement="p" Prefix="바" Suffix="[ᄀᄁᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒ]" />
-      <Transliteration Original="ᆲ" Replacement="l" />
+      <Transliteration Original="ᆮ" Replacement="t">
+        <Exception Replacement="d" Suffix="ᄋ" />
+        <Exception Replacement="n" Suffix="ᄂ" />
+        <Exception Replacement="ch'" Suffix="ᄒ" />
+      </Transliteration>
+      <Transliteration Original="ᆯ" Replacement="l">
+        <Exception Replacement="r" Suffix="[ᄋᄒ]" />
+      </Transliteration>
+      <Transliteration Original="ᆰ" Replacement="l">
+        <Exception Replacement="lg" Suffix="ᄋ" />
+        <Exception Replacement="l" Suffix="ᄀ" />
+        <Exception Replacement="ng" Suffix="ᄂ" />
+        <Exception Replacement="lk'" Suffix="ᄒ" />
+        <Exception Replacement="k" Suffix="[ᄁᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒ]" />
+      </Transliteration>
+      <Transliteration Original="ᆱ" Replacement="m">
+        <Exception Replacement="lm" Suffix="ᄋ" />
+      </Transliteration>
+      <Transliteration Original="ᆲ" Replacement="l">
+        <Exception Replacement="lb" Suffix="ᄋ" />
+        <Exception Replacement="lp'" Suffix="ᄒ" />
+        <Exception Replacement="l" Prefix="바" Suffix="ᄂ" />
+        <Exception Replacement="p" Prefix="바" Suffix="[ᄀᄁᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒ]" />
+      </Transliteration>
       <Transliteration Original="ᆳ" Replacement="l" />
-      <Transliteration Original="ᆴ" Replacement="lt'" Suffix="ᄋ" />
-      <Transliteration Original="ᆴ" Replacement="l" />
-      <Transliteration Original="ᆵ" Replacement="lp'" Suffix="ᄋ" />
-      <Transliteration Original="ᆵ" Replacement="p" />
-      <Transliteration Original="ᆶ" Replacement="r" Suffix="ᄋ" />
-      <Transliteration Original="ᆶ" Replacement="l" />
+      <Transliteration Original="ᆴ" Replacement="l">
+        <Exception Replacement="lt'" Suffix="ᄋ" />
+      </Transliteration>
+      <Transliteration Original="ᆵ" Replacement="p">
+        <Exception Replacement="lp'" Suffix="ᄋ" />
+      </Transliteration>
+      <Transliteration Original="ᆶ" Replacement="l">
+        <Exception Replacement="r" Suffix="ᄋ" />
+      </Transliteration>
       <Transliteration Original="ᆷ" Replacement="m" />
-      <Transliteration Original="ᆸ" Replacement="b" Suffix="ᄋ" />
-      <Transliteration Original="ᆸ" Replacement="m" Suffix="[ᄂᄅᄆ]" />
-      <Transliteration Original="ᆸ" Replacement="p" />
-      <Transliteration Original="ᆹ" Replacement="ps" Suffix="ᄋ" />
-      <Transliteration Original="ᆹ" Replacement="p" />
-      <Transliteration Original="ᆺ" Replacement="nn" Suffix="ᄋ[ᅣᅤᅧᅨᅭᅲᅵ]" /> <!-- s in single words, nn in compound words -->
-      <Transliteration Original="ᆺ" Replacement="t" Suffix="[ᄀᄃᄇᄉᄌᄒ\b]" />
-      <Transliteration Original="ᆺ" Replacement="d" />
-      <Transliteration Original="ᆻ" Replacement="ss" Suffix="ᄋ" />
-      <Transliteration Original="ᆻ" Replacement="n" Suffix="ᄂ" />
-      <Transliteration Original="ᆻ" Replacement="t" />
+      <Transliteration Original="ᆸ" Replacement="p">
+        <Exception Replacement="b" Suffix="ᄋ" />
+        <Exception Replacement="m" Suffix="[ᄂᄅᄆ]" />
+      </Transliteration>
+      <Transliteration Original="ᆹ" Replacement="p">
+        <Exception Replacement="ps" Suffix="ᄋ" />
+      </Transliteration>
+      <Transliteration Original="ᆺ" Replacement="d">
+        <!-- s in single words, nn in compound words -->
+        <Exception Replacement="nn" Suffix="ᄋ[ᅣᅤᅧᅨᅭᅲᅵ]" />
+        <Exception Replacement="t" Suffix="[ᄀᄃᄇᄉᄌᄒ\b]" />
+      </Transliteration>
+      <Transliteration Original="ᆻ" Replacement="t">
+        <Exception Replacement="ss" Suffix="ᄋ" />
+        <Exception Replacement="n" Suffix="ᄂ" />
+      </Transliteration>
       <Transliteration Original="ᆼ" Replacement="ng" />
-      <Transliteration Original="ᆽ" Replacement="n" Suffix="[ᄂᄆ]" />
-      <Transliteration Original="ᆽ" Replacement="ch'" Suffix="ᄒ" />
-      <Transliteration Original="ᆽ" Replacement="t" />
-      <Transliteration Original="ᆾ" Replacement="j" Suffix="ᄋ" />
-      <Transliteration Original="ᆾ" Replacement="n" Suffix="[ᄂᄆ]" />
-      <Transliteration Original="ᆾ" Replacement="t" />
-      <Transliteration Original="ᆿ" Replacement="k'" Suffix="[ᄀᄁᄂᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒ]" />
-      <Transliteration Original="ᆿ" Replacement="k" />
-      <Transliteration Original="ᇀ" Replacement="t'" Suffix="ᄋ" />
-      <Transliteration Original="ᇀ" Replacement="n" Suffix="이|[ᄂᄆ]" />
-      <Transliteration Original="ᇀ" Replacement="t" />
+      <Transliteration Original="ᆽ" Replacement="t">
+        <Exception Replacement="n" Suffix="[ᄂᄆ]" />
+        <Exception Replacement="ch'" Suffix="ᄒ" />
+      </Transliteration>
+      <Transliteration Original="ᆾ" Replacement="t">
+        <Exception Replacement="j" Suffix="ᄋ" />
+        <Exception Replacement="n" Suffix="[ᄂᄆ]" />
+      </Transliteration>
+      <Transliteration Original="ᆿ" Replacement="k">
+        <Exception Replacement="k'" Suffix="[ᄀᄁᄂᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒ]" />
+      </Transliteration>
+      <Transliteration Original="ᇀ" Replacement="t">
+        <Exception Replacement="t'" Suffix="ᄋ" />
+        <Exception Replacement="n" Suffix="이|[ᄂᄆ]" />
+      </Transliteration>
       <Transliteration Original="ᇁ" Replacement="p" />
-      <Transliteration Original="ᇂ" Replacement="" Suffix="ᄋ" />
-      <Transliteration Original="ᇂ" Replacement="n" Suffix="ᄂ" />
-      <Transliteration Original="ᇂ" Replacement="t" />
+      <Transliteration Original="ᇂ" Replacement="t">
+        <Exception Replacement="" Suffix="ᄋ" />
+        <Exception Replacement="n" Suffix="ᄂ" />
+      </Transliteration>
       <Transliteration Original="ᆧ" Replacement="" />
     </Romanization>
     <Romanization Name="Revised Romanization">

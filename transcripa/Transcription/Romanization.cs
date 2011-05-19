@@ -46,12 +46,12 @@ namespace transcripa
                 bool hasMatch = false;
                 foreach (Transcription transliteration in Transliterations)
                 {
-                    int matchLength = transliteration.IsMatch(input, i);
-                    if (matchLength != 0)
+                    Transcription.TranscriptionMatch match = transliteration.IsMatch(input, i);
+                    if (match != null)
                     {
                         hasMatch = true;
-                        builder.Append(transliteration.Replacement);
-                        i += matchLength - 1;
+                        builder.Append(match.Replacement);
+                        i += match.Length - 1;
                         break;
                     }
                 }

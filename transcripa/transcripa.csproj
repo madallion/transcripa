@@ -80,12 +80,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Transcription\Accents.cs" />
+    <Compile Include="Input\Accents.cs" />
     <Compile Include="Transcription\Decomposition.cs" />
+    <Compile Include="Transcription\TranscriptionException.cs" />
     <Compile Include="Transcription\Romanization.cs" />
     <Compile Include="Transcription\Transcription.cs" />
-    <Compile Include="Transcription\LanguageManager.cs" />
+    <Compile Include="Management\LanguageManager.cs" />
     <Compile Include="Extensions\XmlExtension.cs" />
+    <Compile Include="Transcription\TranscriptionMatch.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,7 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Transcription\Language.cs" />
+    <Compile Include="Management\Language.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

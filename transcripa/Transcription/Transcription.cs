@@ -21,6 +21,7 @@ namespace transcripa
     /// </summary>
     public partial class Transcription
     {
+        private List<TranscriptionException> exceptions = new List<TranscriptionException>();
         private const RegexOptions regexOptions = RegexOptions.IgnoreCase;
         private Regex originalRegex;
         private Regex prefixRegex;
@@ -34,7 +35,7 @@ namespace transcripa
         /// <param name="replacement">A string representing what the combination will be replaced with.</param>
         public Transcription(string original, string replacement)
         {
-            this.originalRegex = new Regex("^" + original, regexOptions);
+            this.originalRegex = new Regex("^(?:" + original + ")", regexOptions);
             this.replacement = replacement;
         }
 
@@ -62,29 +63,44 @@ namespace transcripa
             }
         }
 
+        public void AddException(string replacement, string prefix, string suffix)
+        {
+            exceptions.Add(new TranscriptionException(replacement, prefix, suffix));
+        }
+
         /// <summary>
         /// Returns the length of the match on the raw string, returning 0 if no match is found.
         /// </summary>
         /// <param name="raw">The string to attempt to transcribe.</param>
         /// <param name="startIndex">The beginning index of the string from which to build a substring</param>
         /// <returns></returns>
-        public int IsMatch(string raw, int startIndex)
+        public TranscriptionMatch IsMatch(string raw, int startIndex)
         {
+            Match match = originalRegex.Match(raw.Substring(startIndex));
             // Get entire match to make calculating start index of suffix regex evaluation a bit easier
-            int matchLength = originalRegex.Match(raw.Substring(startIndex)).Length;
+            int matchLength = match.Length;
             if (matchLength != 0)
             {
-                if (prefixRegex == null || prefixRegex.IsMatch(raw.Substring(0, startIndex)))
+                string prefix = raw.Substring(0, startIndex);
+                if (prefixRegex == null || prefixRegex.IsMatch(prefix))
                 {
-                    if (suffixRegex == null || suffixRegex.IsMatch(raw.Substring(startIndex + matchLength)))
+                    string suffix = raw.Substring(startIndex + matchLength);
+                    if (suffixRegex == null || suffixRegex.IsMatch(suffix))
                     {
-                        return matchLength;
+                        foreach (TranscriptionException exception in exceptions)
+                        {
+                            if (exception.IsMatch(prefix, suffix))
+                            {
+                                return new TranscriptionMatch(exception.Replacement, match.Length);
+                            }
+                        }
+                        return new TranscriptionMatch(replacement, match.Length);
                     }
-                    else return 0;
+                    else return null;
                 }
-                else return 0;
+                else return null;
             }
-            else return 0;
+            else return null;
         }
 
         #region Properties
