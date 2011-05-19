@@ -620,9 +620,9 @@
   <Language Name="Mandarin" ISO="zh" Native="中文">
     <Romanization Name="Pinyin">
       <Transliteration Original="[啊]" Replacement="a ">
-        <Exception Replacement="ā " Suffix="\!" />
-        <Exception Replacement="à " Suffix="\," />
-        <Exception Replacement="á " Suffix="\?" />
+        <Exception Replacement="ā " Suffix="[\!！]" />
+        <Exception Replacement="à " Suffix="[\,，]" />
+        <Exception Replacement="á " Suffix="[\?？]" />
       </Transliteration>
       <Transliteration Original="[阿]" Replacement="ā ">
         <Exception Replacement="ē " Suffix="弥" />
@@ -2239,6 +2239,15 @@
         <Exception Original="作" Replacement="zuó " Suffix="践" />
       </Transliteration>
       <Transliteration Original="[左佐]" Replacement="zuǒ " />
+      <Transliteration Original="[，、]" Replacement=", " />
+      <Transliteration Original="。" Replacement=". " />
+      <Transliteration Original="！" Replacement="! " />
+      <Transliteration Original="？" Replacement="? " />
+      <Transliteration Original="：" Replacement=": " />
+      <Transliteration Original="；" Replacement="; " />
+      <Transliteration Original="（" Replacement=" (" />
+      <Transliteration Original="）" Replacement=") " />
+      <Transliteration Original="“" Replacement="&quot;" />
     </Romanization>
     <IPA>
       <!-- Finals -->
