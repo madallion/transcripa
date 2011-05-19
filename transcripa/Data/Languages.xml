@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Languages>
+<Languages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Languages.xsd">
   <Language Name="English" ISO="en" Native="English">
     <IPA>
       <!-- Special cases -->
@@ -431,7 +431,7 @@
       </Transliteration>
       <Transliteration Original="ᆧ" Replacement="" />
     </Romanization>
-    <Romanization Name="Revised Romanization">
+    <Romanization Name="Revised">
       <!-- Initial -->
       <Transliteration Original="ᄀ" Replacement="g" />
       <Transliteration Original="ᄁ" Replacement="gg" />

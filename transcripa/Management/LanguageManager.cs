@@ -12,7 +12,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows;
 using System.Xml;
+using System.Xml.Schema;
+using System.Xml.XPath;
 
 namespace transcripa
 {
@@ -22,6 +25,7 @@ namespace transcripa
     public partial class LanguageManager
     {
         private const string xmlPath = "Data/Languages.xml";
+        private const string xmlSchemaPath = "Data/Languages.xsd";
         private XmlDocument xml = new XmlDocument();
         private Dictionary<string, Language> languages = new Dictionary<string, Language>();
         private string name = "";
@@ -32,7 +36,8 @@ namespace transcripa
         public LanguageManager()
         {
             XmlNodeList matches;
-            xml.Load(xmlPath);
+            xml.LoadWithSchema(xmlPath, xmlSchemaPath, Validation.ValidationEventHandler,
+                "transcripa", !Properties.Settings.Default.HideErrors);
             matches = xml.SelectNodes("/Languages/Language");
             foreach (XmlNode match in matches)
             {

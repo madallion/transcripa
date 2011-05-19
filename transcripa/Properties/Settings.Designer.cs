@@ -58,5 +58,17 @@ namespace transcripa.Properties {
                 this["CurrentRomanizationIndex"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HideErrors {
+            get {
+                return ((bool)(this["HideErrors"]));
+            }
+            set {
+                this["HideErrors"] = value;
+            }
+        }
     }
 }

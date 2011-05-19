@@ -39,6 +39,7 @@ namespace transcripa
             InitializeComponent();
             textBoxInput.Text = currentInput;
             textBoxInput.SelectionStart = currentInput.Length;
+            hideErrorsCheckBox.IsChecked = Properties.Settings.Default.HideErrors;
 
             languageManager = new LanguageManager();
             accents = new Accents();
@@ -162,6 +163,12 @@ namespace transcripa
             languageManager.CurrentLanguage.RomanizationIndex = romanizationIndex;
             Properties.Settings.Default.CurrentRomanizationIndex = romanizationIndex;
             Transcribe();
+        }
+
+        private void hideErrorsCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
+            Properties.Settings.Default.HideErrors = (cb.IsChecked.HasValue ? (bool)cb.IsChecked : false);
         }
     }
 }

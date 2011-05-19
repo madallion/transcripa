@@ -20,6 +20,7 @@ namespace transcripa
     public partial class Accents
     {
         private const string xmlPath = "Data/Accents.xml";
+        private const string xmlSchemaPath = "Data/Accents.xsd";
         private const string xpath = "/Letters/Letter/Accent";
         private XmlDocument xml = new XmlDocument();
         private Dictionary<string, string> accents = new Dictionary<string, string>();
@@ -31,7 +32,8 @@ namespace transcripa
         public Accents()
         {
             XmlNodeList matches;
-            xml.Load(xmlPath);
+            xml.LoadWithSchema(xmlPath, xmlSchemaPath, Validation.ValidationEventHandler,
+                "transcripa", !Properties.Settings.Default.HideErrors);
 
             matches = xml.SelectNodes(xpath);
 
