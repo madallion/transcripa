@@ -245,14 +245,14 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="ISO" type="xs:string" use="required">
+            <xs:attribute name="ISO" type="xs:string" use="optional">
               <xs:annotation>
                 <xs:documentation>
                   The two-letter ISO code for the language.
                 </xs:documentation>
               </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="Native" type="xs:string" use="required">
+            <xs:attribute name="Native" type="xs:string" use="optional">
               <xs:annotation>
                 <xs:documentation>
                   The name of the language in the native language and native script.

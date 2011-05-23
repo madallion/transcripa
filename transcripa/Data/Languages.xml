@@ -3,6 +3,104 @@
   <Language Name="None" ISO="  " Native="None">
     <IPA />
   </Language>
+  <Language Name="Arabic" ISO="ar" Native="Arabic">
+    <Romanization Name="Normal">
+      <!-- Allāh -->
+      <Transliteration Original="الله‎" Replacement="Allāh" />
+      <!-- Vowels -->
+      <Transliteration Original="َ" Replacement="a" />
+      <Transliteration Original="ُ" Replacement="u" />
+      <Transliteration Original="ِ" Replacement="i" />
+      <Transliteration Original="َا" Replacement="ā" />
+      <Transliteration Original="َى" Replacement="ā" />
+      <Transliteration Original="ُو" Replacement="ū" />
+      <Transliteration Original="ِي" Replacement="ī" />
+      <Transliteration Original="ا‎" Replacement="ā" />
+      <Transliteration Original="ى" Replacement="ā" />
+      <Transliteration Original="و‎" Replacement="ū" />
+      <Transliteration Original="ي" Replacement="ī" />
+      <Transliteration Original="َي" Replacement="ay" />
+      <Transliteration Original="َو" Replacement="aw" />
+      <Transliteration Original="" Replacement="a" />
+
+
+
+      <Transliteration Original="ْ" Replacement="" />
+      <Transliteration Original="ٰ" Replacement="ā" />
+      <Transliteration Original="" Replacement="a" />
+      <Transliteration Original="" Replacement="a" />
+      <Transliteration Original="" Replacement="a" />
+      <!-- Consonants -->
+      <Transliteration Original="ا" Replacement="ā" />
+      <Transliteration Original="ب" Replacement="b" />
+      <Transliteration Original="ت" Replacement="t" />
+      <Transliteration Original="ث" Replacement="ṯ" />
+      <Transliteration Original="ج" Replacement="ǧ" />
+      <Transliteration Original="ح" Replacement="ḥ" />
+      <Transliteration Original="خ" Replacement="ḫ" />
+      <Transliteration Original="د" Replacement="d" />
+      <Transliteration Original="ذ" Replacement="ḏ" />
+      <Transliteration Original="ر" Replacement="r" />
+      <Transliteration Original="ز" Replacement="z" />
+      <Transliteration Original="س" Replacement="s" />
+      <Transliteration Original="ش" Replacement="š" />
+      <Transliteration Original="ص" Replacement="ṣ" />
+      <Transliteration Original="ض" Replacement="ḍ" />
+      <Transliteration Original="ط" Replacement="ṭ" />
+      <Transliteration Original="ظ" Replacement="ẓ" />
+      <Transliteration Original="ع" Replacement="ʿ" />
+      <Transliteration Original="غ" Replacement="ġ" />
+      <Transliteration Original="ج" Replacement="ġ" />
+      <Transliteration Original="ف" Replacement="f" />
+      <Transliteration Original="ق" Replacement="k" />
+      <Transliteration Original="ك" Replacement="q" />
+      <Transliteration Original="ل" Replacement="l" />
+      <Transliteration Original="م" Replacement="m" />
+      <Transliteration Original="ن" Replacement="n" />
+      <Transliteration Original="ه" Replacement="h" />
+      <Transliteration Original="و" Replacement="w" />
+      <Transliteration Original="ي" Replacement="y" />
+      <Transliteration Original="[‎إأء‎]" Replacement="ʾ" />
+      <!-- Variants -->
+      <Transliteration Original="آ" Replacement="ʾā" />
+      <Transliteration Original="ة" Replacement="h" />
+      <Transliteration Original="ى" Replacement="ā" />
+    </Romanization>
+    <IPA>
+      <!-- Allāh -->
+      <Transcription Original="Allāh" Replacement="ʔalˤːɑːh" />
+      <!-- Blah -->
+      <Transcription Original="ā" Replacement="aː" />
+      <Transcription Original="b" Replacement="b" />
+      <Transcription Original="t" Replacement="t" />
+      <Transcription Original="ṯ" Replacement="θ" />
+      <Transcription Original="ǧ" Replacement="dʒ" />
+      <Transcription Original="ḥ" Replacement="ħ" />
+      <Transcription Original="[ḫ]|kh" Replacement="x" />
+      <Transcription Original="[ḏð]|dh" Replacement="ð" />
+      <Transcription Original="d" Replacement="d" />
+      <Transcription Original="r" Replacement="r" />
+      <Transcription Original="z" Replacement="z" />
+      <Transcription Original="š|sh" Replacement="ʃ" />
+      <Transcription Original="s" Replacement="s" />
+      <Transcription Original="ṣ" Replacement="sˤ" />
+      <Transcription Original="ḍ" Replacement="dˤ" />
+      <Transcription Original="ṭ" Replacement="tˤ" />
+      <Transcription Original="ẓ" Replacement="ðˤ" />
+      <Transcription Original="ʿ" Replacement="ʕ" />
+      <Transcription Original="ġ" Replacement="ɣ" />
+      <Transcription Original="f" Replacement="f" />
+      <Transcription Original="k" Replacement="k" />
+      <Transcription Original="q" Replacement="q" />
+      <Transcription Original="l" Replacement="l" />
+      <Transcription Original="m" Replacement="m" />
+      <Transcription Original="n" Replacement="n" />
+      <Transcription Original="h" Replacement="h" />
+      <Transcription Original="w" Replacement="w" />
+      <Transcription Original="y" Replacement="j" />
+      <Transcription Original="ʾ" Replacement="" />    
+    </IPA>
+  </Language>
   <Language Name="English" ISO="en" Native="English">
     <IPA>
       <!-- Special cases -->
@@ -206,6 +304,98 @@
       <!-- Cleanup -->
       <Transcription Original="\-" Replacement=" " />
       <Transcription Original="'" Replacement="" />
+    </IPA>
+  </Language>
+  <Language Name="Greek (Modern)" ISO="el" Native="Ελληνικά">
+    <Romanization Name="ISO 843">
+      <Transliteration Original="[ΑαΆά]" Replacement="a" /> <!-- ΈέΉήΊίΌόΎύΏώ -->
+      <Transliteration Original="[Ββ]" Replacement="v" />
+      <Transliteration Original="[Γγ]" Replacement="g" />
+      <Transliteration Original="[Δδ]" Replacement="d" />
+      <Transliteration Original="[ΕεΈέ]" Replacement="e" />
+      <Transliteration Original="[Ζζ]" Replacement="z" />
+      <Transliteration Original="[ΗηΉή]" Replacement="ī" />
+      <Transliteration Original="[Θθ]" Replacement="th" />
+      <Transliteration Original="[ΙιΊί]" Replacement="i" />
+      <Transliteration Original="[Κκ]" Replacement="k" />
+      <Transliteration Original="[Λλ]" Replacement="l" />
+      <Transliteration Original="[Μμ]" Replacement="m" />
+      <Transliteration Original="[Νν]" Replacement="n" />
+      <Transliteration Original="[Ξξ]" Replacement="x" />
+      <Transliteration Original="[ΟοΌό]" Replacement="o" />
+      <Transliteration Original="[Ππ]" Replacement="p" />
+      <Transliteration Original="[Ρρ]" Replacement="r" />
+      <Transliteration Original="[Σσς]" Replacement="s" />
+      <Transliteration Original="[Ττ]" Replacement="t" />
+      <Transliteration Original="[ΥυΎύ]" Replacement="y" />
+      <Transliteration Original="[Φφ]" Replacement="f" />
+      <Transliteration Original="[Χχ]" Replacement="ch" />
+      <Transliteration Original="[Ψψ]" Replacement="ps" />
+      <Transliteration Original="[ΩωΏώ]" Replacement="ō" />
+    </Romanization>
+    <IPA>
+      <!-- Vowels -->
+      <Transcription Original="eu" Replacement="ev">
+        <Exception Replacement="ef" Suffix="[dglmnrvzaeiouy]" />
+      </Transcription>
+      <Transcription Original="īu" Replacement="iv">
+        <Exception Replacement="if" Suffix="[dglmnrvzaeiouy]" />
+      </Transcription>
+      <Transcription Original="[eoy]i|[iīy]" Replacement="i" />
+      <Transcription Original="ai|e" Replacement="e" />
+      <Transcription Original="au" Replacement="av">
+        <Exception Replacement="af" Suffix="[dglmnrvzaeiouy]" />
+      </Transcription>
+      <Transcription Original="a" Replacement="a" />
+      <Transcription Original="ou" Replacement="u" />
+      <Transcription Original="[oō]" Replacement="o" />
+      <!-- Consonant digraphs -->
+      <Transcription Original="gg" Replacement="ŋɡ">
+        <Exception Replacement="ɲɟ" Prefix="\s" Suffix="[ao]i|[eiīy]" />
+      </Transcription>
+      <Transcription Original="gk" Replacement="ŋɡ">
+        <Exception Replacement="ɟ" Prefix="\s" Suffix="[ao]i|[eiīy]" />
+        <Exception Replacement="g" Prefix="\s" />
+        <Exception Replacement="ɲɟ" Suffix="[ao]i|[eiīy]" />
+      </Transcription>
+      <Transcription Original="gch" Replacement="ŋx">
+        <Exception Replacement="ɲç" Suffix="[ao]i|[eiīy]" />
+      </Transcription>
+      <Transcription Original="gx" Replacement="ŋks" />
+      <Transcription Original="mp" Replacement="mb">
+        <Exception Replacement="b" Prefix="\s" />
+      </Transcription>
+      <Transcription Original="nt" Replacement="nd">
+        <Exception Replacement="d" Prefix="\s" />
+      </Transcription>
+      <Transcription Original="tr" Replacement="ts" />
+      <Transcription Original="tz" Replacement="dz" />
+      <!-- Consonants -->
+      <Transcription Original="v" Replacement="v" />
+      <Transcription Original="g" Replacement="ɣ">
+        <Exception Replacement="ʝ" Suffix="[ao]i|[eiīy]" />
+      </Transcription>
+      <Transcription Original="d" Replacement="ð" />
+      <Transcription Original="z" Replacement="z" />
+      <Transcription Original="th" Replacement="θ" />
+      <Transcription Original="k" Replacement="k">
+        <Exception Replacement="c" Suffix="[ao]i|[eiīy]" />
+      </Transcription>
+      <Transcription Original="l" Replacement="l" />
+      <Transcription Original="m" Replacement="m" />
+      <Transcription Original="n" Replacement="n" />
+      <Transcription Original="x" Replacement="ks" />
+      <Transcription Original="p" Replacement="p" />
+      <Transcription Original="r" Replacement="r" />
+      <Transcription Original="s" Replacement="s">
+        <Exception Replacement="z" Suffix="[gmrv]" />
+      </Transcription>
+      <Transcription Original="t" Replacement="t" />
+      <Transcription Original="f" Replacement="f" />
+      <Transcription Original="ch" Replacement="x">
+        <Exception Replacement="ç" Suffix="[ao]i|[eiīy]" />
+      </Transcription>
+      <Transcription Original="ps" Replacement="ps" />
     </IPA>
   </Language>
   <Language Name="Japanese" ISO="ja" Native="日本語">
@@ -2510,77 +2700,92 @@
       <!-- Vowels -->
       <Transcription Original="a" Replacement="a" />
       <Transcription Original="ą" Replacement="ɔ̃">
+        <Exception Replacement="ɔw̃" Suffix="\s" />
         <Exception Replacement="ɔn" Suffix="[cćdt]" />
         <Exception Replacement="ɔŋ" Suffix="[kg]" />
         <Exception Replacement="ɔm" Suffix="[bp]" />
+        <Exception Replacement="ɔ" Suffix="ł" />
       </Transcription>
       <Transcription Original="e" Replacement="ɛ" />
       <Transcription Original="ę" Replacement="ɛ̃">
         <Exception Replacement="ɛn" Suffix="[cćdt]" />
         <Exception Replacement="ɛŋ" Suffix="[kg]" />
         <Exception Replacement="ɛm" Suffix="[bp]" />
+        <Exception Replacement="ɛː" Suffix="[\slł]" />
       </Transcription>
       <Transcription Original="i" Replacement="i">
         <Exception Replacement="ʲ" Prefix="[bdfgklmprtw]|c?h" Suffix="[aąeęioóuy]" />
+        <Exception Replacement="ʲi" Prefix="[bdfgklmprtw]|c?h" Suffix="[^aąeęioóuy]" />
       </Transcription>
       <Transcription Original="o" Replacement="ɔ" />
       <Transcription Original="[uó]" Replacement="u" />
       <Transcription Original="y" Replacement="ɨ" />
       <!-- Voiced consonants -->
       <Transcription Original="b" Replacement="b">
-        <Exception Replacement="p" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+        <Exception Replacement="p" Suffix="(?:\s|(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]))" />
       </Transcription>
-      <Transcription Original="dzi" Replacement="dʑ" Suffix="[aąeęioóuy]">
-        <Exception Replacement="tɕ" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+      <Transcription Original="dzi" Replacement="d͡ʑi" Suffix="[^aąeęioóuy]">
+        <Exception Replacement="t͡ɕi" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
       </Transcription>
-      <Transcription Original="dz" Replacement="dz">
-        <Exception Replacement="ts" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+      <Transcription Original="dzi" Replacement="d͡ʑ" Suffix="[aąeęioóuy]">
+        <Exception Replacement="t͡ɕ" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
+      </Transcription>
+      <Transcription Original="dz" Replacement="d͡z">
+        <Exception Replacement="t͡s" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
       </Transcription>
       <Transcription Original="dź" Replacement="dʑ">
-        <Exception Replacement="tɕ" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+        <Exception Replacement="t͡ɕ" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
       </Transcription>
-      <Transcription Original="dż" Replacement="dʐ">
-        <Exception Replacement="tʂ" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+      <Transcription Original="dż" Replacement="d͡ʐ">
+        <Exception Replacement="t͡ʂ" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
       </Transcription>
       <Transcription Original="d" Replacement="d">
-        <Exception Replacement="t" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+        <Exception Replacement="t" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
       </Transcription>
       <Transcription Original="g" Replacement="ɡ">
-        <Exception Replacement="k" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+        <Exception Replacement="k" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
       </Transcription>
       <Transcription Original="w" Replacement="v">
         <Exception Replacement="f" Prefix="(?:[cćfhkpsśt]|[cs]z)" Suffix="[aąeęioóuy]" />
-        <Exception Replacement="f" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+        <Exception Replacement="f" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
+      </Transcription>
+      <Transcription Original="zi" Replacement="ʑi" Suffix="[^aąeęioóuy]">
+        <Exception Replacement="ɕi" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
       </Transcription>
       <Transcription Original="zi" Replacement="ʑ" Suffix="[aąeęioóuy]">
-        <Exception Replacement="ɕ" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+        <Exception Replacement="ɕ" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
       </Transcription>
       <Transcription Original="ź" Replacement="ʑ">
-        <Exception Replacement="ɕ" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+        <Exception Replacement="ɕ" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
       </Transcription>
-      <Transcription Original="ż|rz" Replacement="ʐ">
+      <Transcription Original="rz" Replacement="ʐ">
         <Exception Replacement="ʂ" Prefix="(?:[cćfhkpsśt]|[cs]z)" Suffix="[aąeęioóuy]" />
-        <Exception Replacement="ʂ" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+        <Exception Replacement="ʂ" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
+      </Transcription>
+      <Transcription Original="ż" Replacement="ʐ">
+        <Exception Replacement="ʂ" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
       </Transcription>
       <Transcription Original="z" Replacement="z">
-        <Exception Replacement="s" Suffix="[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy]" />
+        <Exception Replacement="s" Suffix="(?:\s|[^aąeęioóuy]*\s?(?:[\scćfhkpsśt]|[cs]z)[aąeęioóuy])" />
       </Transcription>
-      <!-- Everything should be devoiced if consonant preceeding rz or w is devoiced -->
       <!-- Devoiced consonants -->
-      <Transcription Original="ć" Replacement="tɕ">
-        <Exception Replacement="dʑ" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
+      <Transcription Original="ć" Replacement="t͡ɕ">
+        <Exception Replacement="d͡ʑ" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
       </Transcription>
       <Transcription Original="c?h" Replacement="x">
         <Exception Replacement="ɣ" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
       </Transcription>
-      <Transcription Original="ci" Replacement="tɕ" Suffix="[^aąeęioóuy]">
-        <Exception Replacement="dʑ" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
+      <Transcription Original="ci" Replacement="t͡ɕi" Suffix="[^aąeęioóuy]">
+        <Exception Replacement="d͡ʑi" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
       </Transcription>
-      <Transcription Original="c" Replacement="ts">
-        <Exception Replacement="dz" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
+      <Transcription Original="ci" Replacement="t͡ɕ" Suffix="[aąeęioóuy]">
+        <Exception Replacement="d͡ʑ" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
       </Transcription>
-      <Transcription Original="cz" Replacement="tʂ">
-        <Exception Replacement="dʐ" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
+      <Transcription Original="cz" Replacement="t͡ʂ">
+        <Exception Replacement="d͡ʐ" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
+      </Transcription>
+      <Transcription Original="c" Replacement="t͡s">
+        <Exception Replacement="d͡z" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
       </Transcription>
       <Transcription Original="f" Replacement="f">
         <Exception Replacement="v" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
@@ -2591,17 +2796,20 @@
       <Transcription Original="p" Replacement="p">
         <Exception Replacement="b" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
       </Transcription>
-      <Transcription Original="si" Replacement="ɕ" Suffix="[^aąeęioóuy]">
+      <Transcription Original="si" Replacement="ɕi" Suffix="[aąeęioóuy]">
+        <Exception Replacement="ʑi" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
+      </Transcription>
+      <Transcription Original="si" Replacement="ɕ" Suffix="[aąeęioóuy]">
         <Exception Replacement="ʑ" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
       </Transcription>
       <Transcription Original="ś" Replacement="ɕ">
         <Exception Replacement="ʑ" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
       </Transcription>
-      <Transcription Original="s" Replacement="s">
-        <Exception Replacement="z" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
-      </Transcription>
       <Transcription Original="sz" Replacement="ʂ">
         <Exception Replacement="ʐ" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
+      </Transcription>
+      <Transcription Original="s" Replacement="s">
+        <Exception Replacement="z" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
       </Transcription>
       <Transcription Original="t" Replacement="t">
         <Exception Replacement="d" Suffix="[^aąeęioóuy]*\s?(?:[\sbdgźż]|dz)(?:rz|w)?[aąeęioóuy]" />
@@ -2617,7 +2825,48 @@
       <Transcription Original="r" Replacement="r" />
       <Transcription Original="ł" Replacement="w" />
     </IPA>
+  </Language> 
+  <!--
+  <Language Name="Quenya">
+    <Romanization Name="Tolkien">
+      <Transliteration Original="[]" Replacement="a" />
+      <Transliteration Original="[]" Replacement="y" />
+      <Transliteration Original="[]" Replacement="i" />
+      <Transliteration Original="[]" Replacement="e" />
+      <Transliteration Original="[]" Replacement="é" />
+      <Transliteration Original="[]" Replacement="o" />
+      <Transliteration Original="[]" Replacement="u" />
+      <Transliteration Original="[]" Replacement="ó" />
+      <Transliteration Original="" Replacement="t" />
+      <Transliteration Original="" Replacement="p" />
+      <Transliteration Original="" Replacement="c" />
+      <Transliteration Original="" Replacement="qu" />
+      <Transliteration Original="" Replacement="nd" />
+      <Transliteration Original="" Replacement="mb" />
+      <Transliteration Original="" Replacement="ng" />
+      <Transliteration Original="" Replacement="ngw" />
+      <Transliteration Original="" Replacement="th" />
+      <Transliteration Original="" Replacement="f" />
+      <Transliteration Original="" Replacement="h" />
+      <Transliteration Original="" Replacement="hw" />
+      <Transliteration Original="" Replacement="nt" />
+      <Transliteration Original="" Replacement="mp" />
+      <Transliteration Original="" Replacement="nc" />
+      <Transliteration Original="" Replacement="nqu" />
+      <Transliteration Original="" Replacement="n" />
+      <Transliteration Original="" Replacement="m" />
+      <Transliteration Original="" Replacement="ñ" />
+      <Transliteration Original="" Replacement="ñw" />
+      <Transliteration Original="" Replacement="r" />
+      <Transliteration Original="" Replacement="v" />
+      <Transliteration Original="" Replacement="-" />
+      <Transliteration Original="" Replacement="w" />
+    </Romanization>
+    <IPA>
+      
+    </IPA>
   </Language>
+  -->
   <Language Name="Russian" ISO="ru" Native="Русский">
     <Romanization Name="Scholarly">
       <Transliteration Original="а" Replacement="a" />
