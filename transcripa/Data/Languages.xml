@@ -398,6 +398,154 @@
       <Transcription Original="ps" Replacement="ps" />
     </IPA>
   </Language>
+  <Language Name="Irish" ISO="ga" Native="Gaeilge">
+    <IPA>
+      <!-- Vowels followed by lenighted consonants -->
+      <Transcription Original="(?:e?a[bm]|o[bdg])h(?:ai?)?" Replacement="əu" Prefix="\s[bcdfghlmnprstv]*" />
+      <Transcription Original="omh(?:ai?)?" Replacement="oː" Prefix="\s[bcdfghlmnprstv]*" />
+      <Transcription Original="e?a[dg]h(?:ai?)?|ai[dg]h|[eo]i[dg]h(?:i|ea)?" Replacement="əi" Prefix="\s[bcdfghlmnprstv]*" />
+      <Transcription Original="e?adh" Replacement="ə" />
+      <Transcription Original="a?i[dg]h" Replacement="iː" Prefix="[aáeéiíoóuú][bcdfghlmnprstv]+" />
+      <!-- Fada -->
+      <Transcription Original="e?ái?" Replacement="aː" />
+      <Transcription Original="é[ai]?" Replacement="eː" />
+      <Transcription Original="[aou]?ío?" Replacement="iː" />
+      <Transcription Original="ói?" Replacement="oː" />
+      <Transcription Original="i?ú[io]?" Replacement="uː" />
+      <!-- Di- and trigraphs -->
+      <Transcription Original="aei?" Replacement="eː" />
+      <Transcription Original="aoi?" Replacement="iː">
+        <Exception Original="ao" Replacement="eː" Prefix="\s" Suffix="n" />
+      </Transcription>
+      <Transcription Original="eai" Replacement="a" />
+      <Transcription Original="ei" Replacement="ɛ">
+        <Exception Replacement="ɪ" Suffix="mh?|n" />
+        <Exception Replacement="eː" Suffix="r[dln]" />
+        <Exception Replacement="əi" Suffix="ll[^aáeéiíoóuú]" />
+        <Exception Replacement="iː" Suffix="nn[^aáeéiíoóuú]|m[^aábcdeéfghiílmnoóprstuúv]" />
+      </Transcription>
+      <Transcription Original="eoi" Replacement="oː" />
+      <Transcription Original="eo" Replacement="oː">
+        <Exception Replacement="ɔ" Prefix="\s(?:an)?s" Suffix="[^aábcdeéfghiílmnoóprstuúv]" />
+        <Exception Replacement="ɔ" Prefix="\sd" Suffix="ch[^aábcdeéfghiílmnoóprstuúv]" />
+        <Exception Replacement="ɔ" Prefix="\s" Suffix="chair[^aábcdeéfghiílmnoóprstuúv]" />
+      </Transcription>
+      <Transcription Original="iai?" Replacement="iə" />
+      <Transcription Original="io" Replacement="ʊ">
+        <Exception Replacement="ɪ" Suffix="[ds][^h]|[lnrt]" />
+        <Exception Replacement="iː" Suffix="nn[^aáeéiíoóuú]" />
+      </Transcription>
+      <Transcription Original="iu" Replacement="ʊ" />
+      <Transcription Original="oi" Replacement="ɛ" Prefix="\s[bcdfghlmnprstv]*">
+        <Exception Replacement="ɔ" Suffix="s|cht|r[st]" />
+        <Exception Replacement="ɪ" Prefix="n|mh?" />
+        <Exception Replacement="əi" Suffix="ll[^aáeéiíoóuú]" />
+        <Exception Replacement="iː" Suffix="nn[^aáeéiíoóuú]|m[^aábcdeéfghiílmnoóprstuúv]" />
+        <Exception Replacement="oː" Suffix="r[dln]" />
+      </Transcription>
+      <Transcription Original="oi" Replacement="ə" />
+      <Transcription Original="uai?" Replacement="uə" />
+      <Transcription Original="ui" Replacement="ɪ" Prefix="\s[bcdfghlmnprstv]*">
+        <Exception Replacement="ʊ" Suffix="cht|r[st]" />
+        <Exception Replacement="iː" Suffix="(?:ll|nn)[^aáeéiíoóuú]|m[^aábcdeéfghiílmnoóprstuúv]" />
+        <Exception Replacement="uː" Suffix="r[dln]" />
+      </Transcription>
+      <Transcription Original="ui" Replacement="ə" />
+      <!-- Short vowels -->
+      <Transcription Original="ai?|ea" Replacement="ə">
+        <Exception Original="ai" Replacement="ɛ" Prefix="\s[drs]" Suffix="(?:ir)?[^aábcdeéfghiílmnoóprstuúv]" />
+        <Exception Original="ea" Replacement="ɔ" Prefix="\sb" Suffix="g[^aábcdeéfghiílmnoóprstuúv]" />
+        <Exception Replacement="aː" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" Suffix="(?:ll|nn|rr)[^aáeéiíoóuú]" />
+        <Exception Original="a" Replacement="aː" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" Suffix="m[^aábcdeéfghiílmnoóprstuúv]" />
+        <Exception Replacement="a" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" />
+      </Transcription>
+      <Transcription Original="e" Replacement="ə">
+        <Exception Replacement="ɛ" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" />
+      </Transcription>
+      <Transcription Original="i" Replacement="ə">
+        <Exception Replacement="iː" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" Suffix="(?:ll|nn)[^aáeéiíoóuú]|m[^aábcdeéfghiílmnoóprstuúv]" />
+        <Exception Replacement="ɪ" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" />
+      </Transcription>
+      <Transcription Original="o" Replacement="ə">
+        <Exception Replacement="ʊ" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" Suffix="[mn]" />
+        <Exception Replacement="oː" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" Suffix="r[dln]|(?:ll|rr)[^aáeéiíoóuú]" />
+        <Exception Replacement="oː" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" Suffix="nn[^aáeéiíoóuú]|(?:m|ng)[^aábcdeéfghiílmnoóprstuúv]" />
+        <Exception Replacement="ɔ" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" />
+      </Transcription>
+      <Transcription Original="u" Replacement="ə">
+        <Exception Replacement="uː" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" Suffix="r[dln]" />
+        <Exception Replacement="ʊ" Prefix="\s[bcdfghlmnprstv]*[aáeéiíoóuú]*" />
+      </Transcription>
+      <!-- Consonants -->
+      <Transcription Original="bhf?|mh|v" Replacement="w">
+        <Exception Replacement="vʲ" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="bp?" Replacement="bˠ">
+        <Exception Replacement="bʲ" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="ch" Replacement="bˠ">
+        <Exception Replacement="h" Suffix="[aáeéiíoóuú]" />
+        <Exception Replacement="ç" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="c" Replacement="k">
+        <Exception Replacement="c" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="[dg]h" Replacement="">
+        <Exception Replacement="j" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="dt?" Replacement="d̪ˠ">
+        <Exception Replacement="dʲ" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="fh" Replacement="" />
+      <Transcription Original="f|ph" Replacement="fˠ">
+        <Exception Replacement="fʲ" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="gc?" Replacement="g">
+        <Exception Replacement="ɟ" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="h" Replacement="h" />
+      <Transcription Original="ll?" Replacement="l̪ˠ">
+        <Exception Replacement="lʲ" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="mb?" Replacement="mˠ">
+        <Exception Replacement="mʲ" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="n[dn]?" Replacement="n̪ˠ">
+        <Exception Replacement="nʲ" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="nc" Replacement="ŋk">
+        <Exception Replacement="ɲc" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="ng" Replacement="ŋɡ">
+        <Exception Replacement="nʲ" Prefix="in" Suffix="[^aábcdeéfghiílmnoóprstuúv]" />
+        <Exception Replacement="ɲ" Prefix="\s" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+        <Exception Replacement="ɲɟ" Prefix="[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+        <Exception Replacement="ŋ" Prefix="\s" />
+      </Transcription>
+      <Transcription Original="p" Replacement="pˠ">
+        <Exception Replacement="pʲ" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+      <Transcription Original="rr?" Replacement="ɾʲ">
+        <Exception Original="rr" Replacement="ɾˠ" />
+        <Exception Replacement="ɾˠ" Prefix="\s|[aáoóuú][bcdfghlmnprstv]*" />
+      </Transcription>
+      <Transcription Original="sh" Replacement="h">
+        <Exception Replacement="h" />
+        <Exception Replacement="ç" />
+      </Transcription>
+      <Transcription Original="s" Replacement="ʃ">
+        <Exception Replacement="sˠ" Prefix="\s" Suffix="[mpr]" />
+        <Exception Replacement="sˠ" Prefix="[aáoóuú][bcdfghlmnprstv]*" />
+      </Transcription>
+      <Transcription Original="th" Replacement="h">
+        <Exception Replacement="" Suffix="[^bcdfghlmnprstv]" />
+        <!-- /ç/ when lenited from /tʲaː-, tʲoː-, tʲu(ː)-/ -->
+      </Transcription>
+      <Transcription Original="ts?" Replacement="t̪ˠ">
+        <Exception Replacement="tʲ" Prefix="\s|[eéií][bcdfghlmnprstv]*" Suffix="\s|[bcdfghlmnprstv]*[eéií]" />
+      </Transcription>
+    </IPA>
+  </Language>
   <Language Name="Japanese" ISO="ja" Native="日本語">
     <IPA>
       <!-- Exceptions -->
@@ -3046,6 +3194,27 @@
       <Transcription Original="[èė]|eh" Replacement="e" />
       <Transcription Original="[ijy]u" Replacement="ju" />
       <Transcription Original="[ijy]a" Replacement="ja" />
+    </IPA>
+  </Language>
+  <Language Name="Spanish" ISO="es" Native="Espan">
+    <IPA>
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="d" Replacement="ð" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
+      <Transcription Original="b" Replacement="β" />
     </IPA>
   </Language>
 </Languages>
