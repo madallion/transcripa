@@ -1,0 +1,3 @@
+Decomposes [Han'gŭl](http://en.wikipedia.org/wiki/Hangul) characters into their respective jamo, then romanizes them according to either the [McCune-Reischauer](http://en.wikipedia.org/wiki/McCune%E2%80%93Reischauer) system or the [Revised Romanization](http://en.wikipedia.org/wiki/Revised_Romanization_of_Korean) system. The result can then be transcribed to IPA.
+
+![http://transcripa.googlecode.com/hg/images/korean.png](http://transcripa.googlecode.com/hg/images/korean.png)

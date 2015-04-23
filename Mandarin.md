@@ -1,0 +1,3 @@
+Supports conversion of the most common 3000 [Simplified Chinese](http://en.wikipedia.org/wiki/Simplified_Chinese) [hànzì](http://en.wikipedia.org/wiki/Chinese_character) to [Pīnyīn](http://en.wikipedia.org/wiki/Pinyin), and then transcribes them to IPA, complete with [Chao tone markers](http://en.wikipedia.org/wiki/Tone_letter#Chao_tone_letters_.28IPA.29)
+
+![http://transcripa.googlecode.com/hg/images/mandarin.png](http://transcripa.googlecode.com/hg/images/mandarin.png)

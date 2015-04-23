@@ -1,0 +1,3 @@
+Obviously, English is one of the hardest languages to transcribe because of the completely unreformed nature of its spelling, its openness to foreign words, and the impact of stress on vowel pronunciation. Nonetheless, there's a very preliminary methodology here with several exceptions added.
+
+![http://transcripa.googlecode.com/hg/images/english.png](http://transcripa.googlecode.com/hg/images/english.png)
